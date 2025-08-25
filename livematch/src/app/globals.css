@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+
+}
+
+@theme inline {
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hide Next.js development overlay */
+[data-nextjs-dev-overlay] {
+  display: none !important;
+}

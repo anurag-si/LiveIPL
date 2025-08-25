@@ -1,0 +1,133 @@
+export interface TeamStanding {
+  pos: number;
+  team: string;
+  matches: number;
+  wins: number;
+  losses: number;
+  nr: number; // no result
+  nrr: number; // net run rate
+  for: string;
+  against: string;
+  points: number;
+  recentForm: ("W" | "L" | "N")[]; // Win, Loss, No result
+}
+
+export const pointsTableData2023: TeamStanding[] = [
+  {
+    pos: 1,
+    team: "PBKS",
+    matches: 14,
+    wins: 9,
+    losses: 4,
+    nr: 1,
+    nrr: 0.372,
+    for: "2447/246.4",
+    against: "2395/250.5",
+    points: 19,
+    recentForm: ["W", "L", "W", "W", "W"],
+  },
+  {
+    pos: 2,
+    team: "RCB",
+    matches: 14,
+    wins: 9,
+    losses: 4,
+    nr: 1,
+    nrr: 0.301,
+    for: "2357/243.5",
+    against: "2321/247.5",
+    points: 19,
+    recentForm: ["W", "L", "N", "W", "W"],
+  },
+  {
+    pos: 3,
+    team: "GT",
+    matches: 14,
+    wins: 9,
+    losses: 5,
+    nr: 0,
+    nrr: 0.254,
+    for: "2684/271.5",
+    against: "2639/274.2",
+    points: 18,
+    recentForm: ["L", "L", "W", "W", "W"],
+  },
+  {
+    pos: 4,
+    team: "MI",
+    matches: 14,
+    wins: 8,
+    losses: 6,
+    nr: 0,
+    nrr: 1.142,
+    for: "2472/261.2",
+    against: "2301/276.4",
+    points: 16,
+    recentForm: ["L", "L", "W", "W", "W"],
+  },
+  {
+    pos: 5,
+    team: "DC",
+    matches: 14,
+    wins: 7,
+    losses: 6,
+    nr: 1,
+    nrr: 0.011,
+    for: "2354/250.4",
+    against: "2409/256.5",
+    points: 15,
+    recentForm: ["W", "L", "L", "N", "L"],
+  },
+  {
+    pos: 6,
+    team: "SRH",
+    matches: 14,
+    wins: 6,
+    losses: 7,
+    nr: 1,
+    nrr: -0.241,
+    for: "2519/255.3",
+    against: "2451/242.4",
+    points: 13,
+    recentForm: ["W", "W", "L", "N", "L"],
+  },
+  {
+    pos: 7,
+    team: "LSG",
+    matches: 14,
+    wins: 6,
+    losses: 8,
+    nr: 0,
+    nrr: -0.376,
+    for: "2732/275.4",
+    against: "2779/270.1",
+    points: 12,
+    recentForm: ["L", "W", "W", "L", "L"],
+  },
+  {
+    pos: 8,
+    team: "KKR",
+    matches: 14,
+    wins: 5,
+    losses: 7,
+    nr: 2,
+    nrr: -0.305,
+    for: "1995/227.4",
+    against: "2075/228.5",
+    points: 12,
+    recentForm: ["L", "N", "L", "W", "W"],
+  },
+  {
+    pos: 9,
+    team: "RR",
+    matches: 14,
+    wins: 4,
+    losses: 10,
+    nr: 0,
+    nrr: -0.549,
+    for: "2603/273.0",
+    against: "2773/275.0",
+    points: 8,
+    recentForm: ["W", "L", "L", "W", "W"],
+  },
+];

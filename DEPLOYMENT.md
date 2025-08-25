@@ -48,7 +48,7 @@
 ### 2.4 Add Environment Variables
 In Vercel dashboard, add:
 ```
-NEXT_PUBLIC_API_URL=https://your-railway-backend-url.railway.app/api
+NEXT_PUBLIC_API_URL=https://liveipl-production.up.railway.app/api
 ```
 
 ### 2.5 Deploy
@@ -64,10 +64,10 @@ Your frontend is already configured to use environment variables. Just make sure
 
 ### 3.2 Test Your APIs
 Test these endpoints on your Railway backend:
-- Health: `https://your-app.railway.app/api/health`
-- Points Table: `https://your-app.railway.app/api/points-table`
-- Match Schedule: `https://your-app.railway.app/api/match-schedule`
-- Live Match: `https://your-app.railway.app/api/live-match`
+- Health: `https://liveipl-production.up.railway.app/api/health`
+- Points Table: `https://liveipl-production.up.railway.app/api/points-table`
+- Match Schedule: `https://liveipl-production.up.railway.app/api/match-schedule`
+- Live Match: `https://liveipl-production.up.railway.app/api/live-match`
 
 ## 🌍 Step 4: Access Your Live App
 
@@ -78,8 +78,8 @@ Test these endpoints on your Railway backend:
 - **Match Schedule**: `https://your-app.vercel.app/matches`
 
 ### Backend API
-- **Base URL**: `https://your-app.railway.app/api`
-- **Health Check**: `https://your-app.railway.app/api/health`
+- **Base URL**: `https://liveipl-production.up.railway.app/api`
+- **Health Check**: `https://liveipl-production.up.railway.app/api/health`
 
 ## 🔄 Step 5: Continuous Deployment
 

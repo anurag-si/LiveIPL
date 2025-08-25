@@ -19,7 +19,4 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Hide Next.js development overlay */
-[data-nextjs-dev-overlay] {
-  display: none !important;
-}
+

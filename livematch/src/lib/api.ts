@@ -1,4 +1,5 @@
-const API_BASE_URL = 'http://localhost:5001/api';
+// API configuration for both development and production
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
 
 export interface ApiResponse<T> {
   success: boolean;
@@ -161,10 +162,10 @@ export const getUpcomingMatchesByTeam = async (teamCode: string): Promise<Upcomi
 };
 
 // Live Match API
-export const getLiveMatchStatus = async (): Promise<{ isLive: boolean; matchId?: string; matchNumber?: string; teams?: any; venue?: any; liveScore?: any }> => {
+export const getLiveMatchStatus = async (): Promise<{ isLive: boolean; matchId?: string; matchNumber?: string; teams?: { home: string; away: string }; venue?: string; liveScore?: { home: number; away: number } }> => {
   try {
     const response = await fetch(`${API_BASE_URL}/live-match/status`);
-    const result: ApiResponse<{ isLive: boolean; matchId?: string; matchNumber?: string; teams?: any; venue?: any; liveScore?: any }> = await response.json();
+    const result: ApiResponse<{ isLive: boolean; matchId?: string; matchNumber?: string; teams?: { home: string; away: string }; venue?: string; liveScore?: { home: number; away: number } }> = await response.json();
     
     if (result.success) {
       return result.data;
@@ -177,10 +178,10 @@ export const getLiveMatchStatus = async (): Promise<{ isLive: boolean; matchId?:
   }
 };
 
-export const getLiveMatchScore = async (): Promise<{ matchId: string; matchNumber: string; teams: any; liveScore: any; timestamp: string } | null> => {
+export const getLiveMatchScore = async (): Promise<{ matchId: string; matchNumber: string; teams: { home: string; away: string }; liveScore: { home: number; away: number }; timestamp: string } | null> => {
   try {
     const response = await fetch(`${API_BASE_URL}/live-match/score`);
-    const result: ApiResponse<{ matchId: string; matchNumber: string; teams: any; liveScore: any; timestamp: string } | null> = await response.json();
+    const result: ApiResponse<{ matchId: string; matchNumber: string; teams: { home: string; away: string }; liveScore: { home: number; away: number }; timestamp: string } | null> = await response.json();
     
     if (result.success) {
       return result.data;

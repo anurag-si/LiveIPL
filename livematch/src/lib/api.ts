@@ -1,5 +1,5 @@
 // API configuration for both development and production
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://liveipl-production.up.railway.app/api';
 
 // Check if we're in a build environment
 const isBuildTime = process.env.NODE_ENV === 'production' && !process.env.NEXT_PUBLIC_API_URL;

@@ -71,9 +71,9 @@ export default async function HomePage() {
             {upcomingMatches?.slice(0, 6).map((match) => (
               <div key={match.id} className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
                 {/* Match Header */}
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 px-4 py-3 border-b border-gray-100">
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 px-3 py-2 sm:px-4 sm:py-3 border-b border-gray-100">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-semibold text-blue-700 bg-blue-100 px-2 py-1 rounded-full">
+                    <span className="text-xs font-semibold text-blue-700 bg-blue-100 px-2 py-1 rounded-full truncate max-w-20">
                       {match.matchNumber}
                     </span>
                     <span className="text-xs font-medium text-gray-600 bg-gray-100 px-2 py-1 rounded-full">
@@ -83,47 +83,47 @@ export default async function HomePage() {
                 </div>
                 
                 {/* Teams Section */}
-                <div className="p-4 sm:p-5">
-                  <div className="flex items-center justify-between mb-4">
+                <div className="p-3 sm:p-4 lg:p-5">
+                  <div className="flex items-center justify-between mb-3 sm:mb-4">
                     {/* Home Team */}
-                    <div className="text-center flex-1">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 bg-gray-50 rounded-full p-2 border-2 border-gray-200">
+                    <div className="text-center flex-1 min-w-0">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto mb-2 sm:mb-3 bg-gray-50 rounded-full p-1 sm:p-2 border-2 border-gray-200">
                         <img
                           src={`/${match.teams.home.code}.png`}
                           alt={match.teams.home.name}
                           className="w-full h-full object-contain"
                         />
                       </div>
-                      <div className="space-y-1">
-                        <div className="text-sm font-bold text-gray-800 leading-tight">
+                      <div className="space-y-1 px-1">
+                        <div className="text-sm font-bold text-gray-800 leading-tight truncate">
                           {match.teams.home.shortName}
                         </div>
-                        <div className="text-xs text-gray-500 leading-tight px-2">
+                        <div className="text-xs text-gray-500 leading-tight line-clamp-2 h-8 sm:h-10 flex items-center justify-center">
                           {match.teams.home.name}
                         </div>
                       </div>
                     </div>
                     
                     {/* VS Section */}
-                    <div className="mx-3 sm:mx-4 text-center">
-                      <div className="text-2xl sm:text-3xl font-black text-gray-300 mb-1">VS</div>
+                    <div className="mx-2 sm:mx-3 lg:mx-4 text-center flex-shrink-0">
+                      <div className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-300 mb-1">VS</div>
                       <div className="text-xs text-gray-400 font-medium">Match</div>
                     </div>
                     
                     {/* Away Team */}
-                    <div className="text-center flex-1">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 bg-gray-50 rounded-full p-2 border-2 border-gray-200">
+                    <div className="text-center flex-1 min-w-0">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto mb-2 sm:mb-3 bg-gray-50 rounded-full p-1 sm:p-2 border-2 border-gray-200">
                         <img
                           src={`/${match.teams.away.code}.png`}
                           alt={match.teams.away.name}
                           className="w-full h-full object-contain"
                         />
                       </div>
-                      <div className="space-y-1">
-                        <div className="text-sm font-bold text-gray-800 leading-tight">
+                      <div className="space-y-1 px-1">
+                        <div className="text-sm font-bold text-gray-800 leading-tight truncate">
                           {match.teams.away.shortName}
                         </div>
-                        <div className="text-xs text-gray-500 leading-tight px-2">
+                        <div className="text-xs text-gray-500 leading-tight line-clamp-2 h-8 sm:h-10 flex items-center justify-center">
                           {match.teams.away.name}
                         </div>
                       </div>
@@ -131,7 +131,7 @@ export default async function HomePage() {
                   </div>
                   
                   {/* Match Info */}
-                  <div className="bg-gray-50 rounded-lg p-3 space-y-2">
+                  <div className="bg-gray-50 rounded-lg p-2 sm:p-3 space-y-2">
                     <div className="flex items-center justify-center">
                       <div className="text-sm font-semibold text-gray-700">
                         {new Date(match.startLocalISO).toLocaleDateString('en-US', {
@@ -141,8 +141,8 @@ export default async function HomePage() {
                         })}
                       </div>
                     </div>
-                    <div className="text-center">
-                      <div className="text-xs text-gray-500 leading-tight">
+                    <div className="text-center space-y-1">
+                      <div className="text-xs text-gray-500 leading-tight line-clamp-1">
                         {match.venue.stadium}
                       </div>
                       <div className="text-xs text-gray-400 leading-tight">

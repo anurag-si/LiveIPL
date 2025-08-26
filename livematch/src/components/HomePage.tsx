@@ -1,6 +1,5 @@
 import React from 'react';
 import { getUpcomingMatches } from '@/lib/api';
-import NotificationService from './NotificationService';
 
 export default async function HomePage() {
   const upcomingMatches = await getUpcomingMatches();
@@ -46,11 +45,6 @@ export default async function HomePage() {
             <div className="text-3xl font-bold text-orange-600 mb-2">1</div>
             <div className="text-gray-600">Champion</div>
           </div>
-        </div>
-
-        {/* Notification Service */}
-        <div className="mb-12">
-          <NotificationService />
         </div>
 
         {/* Upcoming Matches */}

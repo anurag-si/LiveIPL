@@ -1,6 +1,5 @@
 import React from 'react';
 import LiveMatchData from './LiveMatchData';
-import NotificationService from './NotificationService';
 import { getLiveMatch } from '@/lib/api';
 
 export default async function LiveMatchHero() {
@@ -43,13 +42,6 @@ export default async function LiveMatchHero() {
               shortName: liveMatch.teams.away.shortName,
               code: liveMatch.teams.away.code
             }}
-            isLive={true}
-          />
-          
-          {/* Notification Service for Live Matches */}
-          <NotificationService 
-            matchId={liveMatch.id}
-            matchTitle={`${liveMatch.teams.home.name} vs ${liveMatch.teams.away.name}`}
             isLive={true}
           />
         </div>

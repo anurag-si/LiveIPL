@@ -1,7 +1,6 @@
 import React from "react"
 import { getPointsTable, TeamStanding } from "@/lib/api"
 import SeasonSelector from "./SeasonSelector"
-import Header from "./Header"
 
 interface PointsTableProps {
   searchParams: { season?: string }
@@ -36,21 +35,16 @@ export default async function PointsTable({ searchParams }: PointsTableProps) {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-        <div className="max-w-7xl mx-auto px-6 py-8">
-          <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
-            <h2 className="text-xl font-semibold text-red-800 mb-2">Error Loading Data</h2>
-            <p className="text-red-600">{error}</p>
-            <p className="text-sm text-red-500 mt-2">Please refresh the page to try again</p>
-          </div>
-        </div>
+      <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+        <h2 className="text-xl font-semibold text-red-800 mb-2">Error Loading Data</h2>
+        <p className="text-red-600">{error}</p>
+        <p className="text-sm text-red-500 mt-2">Please refresh the page to try again</p>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-      
+    <>
       <div className="max-w-7xl mx-auto px-6 py-8">
         {/* Season Selector */}
         <div className="mb-8">
@@ -209,6 +203,6 @@ export default async function PointsTable({ searchParams }: PointsTableProps) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

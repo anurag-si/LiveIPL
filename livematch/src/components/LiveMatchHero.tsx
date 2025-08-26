@@ -19,12 +19,12 @@ export default async function LiveMatchHero() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white p-6 rounded-lg shadow-lg mb-6">
+    <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white p-4 sm:p-6 rounded-lg shadow-lg mb-6">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-2xl font-bold">🏏 Live Match</h2>
+        <h2 className="text-xl sm:text-2xl font-bold">🏏 Live Match</h2>
         <div className="flex items-center space-x-2">
-          <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-          <span className="text-sm font-medium">LIVE</span>
+          <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full animate-pulse"></div>
+          <span className="text-xs sm:text-sm font-medium">LIVE</span>
         </div>
       </div>
 
@@ -46,10 +46,10 @@ export default async function LiveMatchHero() {
           />
         </div>
       ) : (
-        <div className="text-center py-8">
-          <div className="text-4xl mb-4">🏏</div>
-          <h3 className="text-xl font-semibold mb-2">No Live Match Currently</h3>
-          <p className="text-blue-100">Check back later for live IPL action!</p>
+        <div className="text-center py-6 sm:py-8">
+          <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🏏</div>
+          <h3 className="text-lg sm:text-xl font-semibold mb-2">No Live Match Currently</h3>
+          <p className="text-sm sm:text-base text-blue-100 leading-relaxed">Check back later for live IPL action!</p>
         </div>
       )}
     </div>

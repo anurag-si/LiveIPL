@@ -67,7 +67,6 @@ export default async function MatchSchedule() {
   if (error) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header title="IPL 2025" currentPage="matches" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
           <div className="bg-red-50 border border-red-200 rounded-lg p-4 sm:p-6 text-center">
             <h2 className="text-xl font-semibold text-red-800 mb-2">Error Loading Data</h2>
@@ -81,7 +80,6 @@ export default async function MatchSchedule() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header title="IPL 2025" currentPage="matches" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
         <div className="mb-6 sm:mb-8">

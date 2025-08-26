@@ -1,5 +1,6 @@
 import React from 'react';
 import { getUpcomingMatches } from '@/lib/api';
+import LiveMatchHero from './LiveMatchHero';
 
 export default async function HomePage() {
   const upcomingMatches = await getUpcomingMatches();
@@ -27,6 +28,9 @@ export default async function HomePage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-12">
+        {/* Live Match Hero - Always Visible */}
+        <LiveMatchHero />
+
         {/* Quick Stats */}
         <div className="grid md:grid-cols-4 gap-6 mb-12">
           <div className="bg-white rounded-lg shadow-md p-6 text-center">

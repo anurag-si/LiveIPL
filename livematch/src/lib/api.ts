@@ -1,7 +1,7 @@
 // API configuration for both development and production
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://liveipl-production.up.railway.app/api';
 
-// Check if we're in a build environment
+// Check if build environment
 const isBuildTime = process.env.NODE_ENV === 'production' && !process.env.NEXT_PUBLIC_API_URL;
 
 export interface ApiResponse<T> {
@@ -68,8 +68,9 @@ export interface SeasonOption {
 
 // Points Table API
 export const getPointsTable = async (season: string = '2025'): Promise<TeamStanding[]> => {
-  // During build time, return empty array to prevent build failures
   if (isBuildTime) {
+      //  to prevent build failures
+
     console.log('Build time detected, returning empty points table data');
     return [];
   }
@@ -90,7 +91,6 @@ export const getPointsTable = async (season: string = '2025'): Promise<TeamStand
 };
 
 export const getAvailableSeasons = async (): Promise<SeasonOption[]> => {
-  // During build time, return default seasons to prevent build failures
   if (isBuildTime) {
     console.log('Build time detected, returning default seasons');
     return [
@@ -117,7 +117,6 @@ export const getAvailableSeasons = async (): Promise<SeasonOption[]> => {
 
 // Match Schedule API
 export const getMatchSchedule = async (): Promise<MatchScheduleItem[]> => {
-  // During build time, return empty array to prevent build failures
   if (isBuildTime) {
     console.log('Build time detected, returning empty match schedule data');
     return [];
@@ -139,7 +138,6 @@ export const getMatchSchedule = async (): Promise<MatchScheduleItem[]> => {
 };
 
 export const getLiveMatch = async (): Promise<MatchScheduleItem | null> => {
-  // During build time, return null to prevent build failures
   if (isBuildTime) {
     console.log('Build time detected, returning null for live match');
     return null;
@@ -161,7 +159,6 @@ export const getLiveMatch = async (): Promise<MatchScheduleItem | null> => {
 };
 
 export const getUpcomingMatches = async (): Promise<UpcomingMatch[]> => {
-  // During build time, return empty array to prevent build failures
   if (isBuildTime) {
     console.log('Build time detected, returning empty upcoming matches data');
     return [];
@@ -183,7 +180,6 @@ export const getUpcomingMatches = async (): Promise<UpcomingMatch[]> => {
 };
 
 export const getUpcomingMatchesByTeam = async (teamCode: string): Promise<UpcomingMatch[]> => {
-  // During build time, return empty array to prevent build failures
   if (isBuildTime) {
     console.log('Build time detected, returning empty team matches data');
     return [];
@@ -206,7 +202,6 @@ export const getUpcomingMatchesByTeam = async (teamCode: string): Promise<Upcomi
 
 // Live Match API
 export const getLiveMatchStatus = async (): Promise<{ isLive: boolean; matchId?: string; matchNumber?: string; teams?: { home: string; away: string }; venue?: string; liveScore?: { home: number; away: number } }> => {
-  // During build time, return default status to prevent build failures
   if (isBuildTime) {
     console.log('Build time detected, returning default live match status');
     return { isLive: false };
@@ -228,7 +223,6 @@ export const getLiveMatchStatus = async (): Promise<{ isLive: boolean; matchId?:
 };
 
 export const getLiveMatchScore = async (): Promise<{ matchId: string; matchNumber: string; teams: { home: string; away: string }; liveScore: { home: number; away: number }; timestamp: string } | null> => {
-  // During build time, return null to prevent build failures
   if (isBuildTime) {
     console.log('Build time detected, returning null for live match score');
     return null;
@@ -249,20 +243,4 @@ export const getLiveMatchScore = async (): Promise<{ matchId: string; matchNumbe
   }
 };
 
-// Health check
-export const checkApiHealth = async (): Promise<boolean> => {
-  // During build time, return true to prevent build failures
-  if (isBuildTime) {
-    console.log('Build time detected, returning true for health check');
-    return true;
-  }
 
-  try {
-    const response = await fetch(`${API_BASE_URL}/health`);
-    const result = await response.json();
-    return result.status === 'OK';
-  } catch (error) {
-    console.error('API health check failed:', error);
-    return false;
-  }
-};

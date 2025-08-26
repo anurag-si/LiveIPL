@@ -99,7 +99,6 @@ export default function LiveMatchData({ matchId, homeTeam, awayTeam, isLive }: L
 
   return (
     <div className="grid md:grid-cols-2 gap-8 mb-8">
-      {/* Home Team */}
       <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
         <div className="flex items-center gap-4 mb-4">
           <img
@@ -136,7 +135,6 @@ export default function LiveMatchData({ matchId, homeTeam, awayTeam, isLive }: L
         </div>
       </div>
 
-      {/* Away Team */}
       <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
         <div className="flex items-center gap-4 mb-4">
           <img
@@ -173,7 +171,6 @@ export default function LiveMatchData({ matchId, homeTeam, awayTeam, isLive }: L
         </div>
       </div>
 
-      {/* Live Match Details */}
       <div className="md:col-span-2">
         <div className="grid md:grid-cols-3 gap-6">
           <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">

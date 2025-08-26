@@ -2,7 +2,6 @@ import React from "react"
 import { getMatchSchedule, MatchScheduleItem } from "@/lib/api"
 
 export default async function MatchSchedule() {
-  // Fetch data from API (this runs on the server)
   let matchSchedule: MatchScheduleItem[] = []
   let error: string | null = null
   
@@ -83,7 +82,6 @@ export default async function MatchSchedule() {
       <div className="grid gap-4 sm:gap-6">
         {matchSchedule.map((match) => (
           <div key={match.id} className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
-            {/* Match Header */}
             <div className="px-3 sm:px-4 py-2 sm:py-3 bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-100">
               <div className="flex items-center justify-between">
                 <span className={`inline-flex items-center px-2 sm:px-3 py-1 rounded-full text-xs font-medium border ${getStatusBadge(match.status)}`}>
@@ -95,11 +93,8 @@ export default async function MatchSchedule() {
               </div>
             </div>
 
-            {/* Match Details */}
             <div className="p-3 sm:p-4 lg:p-5">
-              {/* Teams Section - Mobile Optimized */}
               <div className="flex items-center justify-between mb-3 sm:mb-4">
-                {/* Home Team */}
                 <div className="text-center flex-1 min-w-0">
                   <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto mb-2 sm:mb-3 bg-gray-50 rounded-full p-1 sm:p-2 border-2 border-gray-200">
                     <img
@@ -118,13 +113,11 @@ export default async function MatchSchedule() {
                   </div>
                 </div>
                 
-                {/* VS Section */}
                 <div className="mx-2 sm:mx-3 lg:mx-4 text-center flex-shrink-0">
                   <div className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-300 mb-1">VS</div>
                   <div className="text-xs text-gray-400 font-medium">Match</div>
                 </div>
                 
-                {/* Away Team */}
                 <div className="text-center flex-1 min-w-0">
                   <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto mb-2 sm:mb-3 bg-gray-50 rounded-full p-1 sm:p-2 border-2 border-gray-200">
                     <img
@@ -144,7 +137,6 @@ export default async function MatchSchedule() {
                 </div>
               </div>
               
-              {/* Match Info */}
               <div className="bg-gray-50 rounded-lg p-2 sm:p-3 space-y-2">
                 <div className="flex items-center justify-center">
                   <div className="text-sm font-semibold text-gray-700">
@@ -161,15 +153,12 @@ export default async function MatchSchedule() {
                 </div>
               </div>
 
-              {/* Additional Match Details */}
               <div className="mt-3 sm:mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                {/* Competition */}
                 <div className="bg-blue-50 rounded-lg p-2 sm:p-3">
                   <div className="text-xs text-blue-600 uppercase tracking-wide font-medium">Competition</div>
                   <div className="text-xs sm:text-sm font-medium text-blue-800 truncate">{match.competition}</div>
                 </div>
 
-                {/* Live Score or Result */}
                 {match.liveScore ? (
                   <div className="bg-green-50 rounded-lg p-2 sm:p-3">
                     <div className="text-xs text-green-600 uppercase tracking-wide font-medium">Live Score</div>
@@ -195,7 +184,6 @@ export default async function MatchSchedule() {
         ))}
       </div>
 
-      {/* Summary - Mobile Optimized */}
       <div className="mt-6 sm:mb-8 bg-white rounded-lg p-4 sm:p-6 shadow-sm border border-gray-100">
         <h3 className="text-lg font-semibold text-gray-900 mb-4 text-center sm:text-left">Schedule Summary</h3>
         <div className="grid grid-cols-3 gap-3 sm:gap-4">

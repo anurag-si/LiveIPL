@@ -7,7 +7,7 @@ const {
   getCompletedMatches 
 } = require('../data/matchScheduleData');
 
-// GET /api/match-schedule - Get all matches
+// Get all matches
 router.get('/', (req, res) => {
   try {
     const matches = getMatchSchedule();
@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
   }
 });
 
-// GET /api/match-schedule/live - Get live match
+// Get live match
 router.get('/live', (req, res) => {
   try {
     const liveMatch = getLiveMatch();
@@ -56,7 +56,7 @@ router.get('/live', (req, res) => {
   }
 });
 
-// GET /api/match-schedule/upcoming - Get upcoming matches
+// Get upcoming matches
 router.get('/upcoming', (req, res) => {
   try {
     const upcomingMatches = getUpcomingMatches();
@@ -78,7 +78,7 @@ router.get('/upcoming', (req, res) => {
   }
 });
 
-// GET /api/match-schedule/completed - Get completed matches
+// Get completed matches
 router.get('/completed', (req, res) => {
   try {
     const completedMatches = getCompletedMatches();
@@ -100,7 +100,7 @@ router.get('/completed', (req, res) => {
   }
 });
 
-// GET /api/match-schedule/status/:status - Get matches by status
+// Get matches by status
 router.get('/status/:status', (req, res) => {
   try {
     const { status } = req.params;
@@ -145,7 +145,7 @@ router.get('/status/:status', (req, res) => {
   }
 });
 
-// GET /api/match-schedule/:id - Get specific match by ID
+// Get specific match by ID
 router.get('/:id', (req, res) => {
   try {
     const { id } = req.params;

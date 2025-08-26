@@ -37,7 +37,6 @@ export default function Header({ title, currentPage = "home" }: HeaderProps) {
           <h1 className="text-base sm:text-lg md:text-xl font-semibold tracking-wide text-gray-900 leading-tight">{title}</h1>
         </div>
         
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 text-gray-600 text-sm">
           {navItems.map((item) => (
             <Link
@@ -54,7 +53,6 @@ export default function Header({ title, currentPage = "home" }: HeaderProps) {
           ))}
         </nav>
 
-        {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button 
             onClick={toggleMobileMenu}
@@ -74,7 +72,6 @@ export default function Header({ title, currentPage = "home" }: HeaderProps) {
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200 shadow-lg">

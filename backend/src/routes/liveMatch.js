@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { getLiveMatch } = require('../data/matchScheduleData');
 
-// GET /api/live-match - Get current live match
+// Get current live match
 router.get('/', (req, res) => {
   try {
     const liveMatch = getLiveMatch();
@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
   }
 });
 
-// GET /api/live-match/status - Get live match status
+// Get live match status
 router.get('/status', (req, res) => {
   try {
     const liveMatch = getLiveMatch();
@@ -68,7 +68,7 @@ router.get('/status', (req, res) => {
   }
 });
 
-// GET /api/live-match/score - Get live match score
+// Get live match score
 router.get('/score', (req, res) => {
   try {
     const liveMatch = getLiveMatch();
@@ -100,7 +100,7 @@ router.get('/score', (req, res) => {
   }
 });
 
-// GET /api/live-match/teams - Get live match team information
+// Get live match team information
 router.get('/teams', (req, res) => {
   try {
     const liveMatch = getLiveMatch();
@@ -132,7 +132,7 @@ router.get('/teams', (req, res) => {
   }
 });
 
-// GET /api/live-match/venue - Get live match venue information
+// Get live match venue information
 router.get('/venue', (req, res) => {
   try {
     const liveMatch = getLiveMatch();
@@ -163,7 +163,7 @@ router.get('/venue', (req, res) => {
   }
 });
 
-// GET /api/live-match/simulate - Simulate live match data updates (for testing)
+// for testing
 router.get('/simulate', (req, res) => {
   try {
     const liveMatch = getLiveMatch();
@@ -176,7 +176,6 @@ router.get('/simulate', (req, res) => {
       });
     }
     
-    // Simulate some live data updates
     const simulatedData = {
       matchId: liveMatch.id,
       matchNumber: liveMatch.matchNumber,

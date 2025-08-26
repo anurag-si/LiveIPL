@@ -46,7 +46,6 @@ export default async function PointsTable({ searchParams }: PointsTableProps) {
   return (
     <>
       <div className="max-w-7xl mx-auto px-6 py-8">
-        {/* Season Selector */}
         <div className="mb-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <label htmlFor="season" className="text-lg font-medium text-gray-900">
@@ -56,7 +55,6 @@ export default async function PointsTable({ searchParams }: PointsTableProps) {
           </div>
         </div>
 
-        {/* Points Table */}
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="px-6 py-4 bg-gradient-to-r from-blue-600 to-indigo-600">
             <h2 className="text-xl font-bold text-white">
@@ -184,7 +182,6 @@ export default async function PointsTable({ searchParams }: PointsTableProps) {
           </div>
         </div>
 
-        {/* Legend */}
         <div className="mt-6 bg-white rounded-lg p-4 shadow-sm">
           <h3 className="text-sm font-medium text-gray-900 mb-3">Legend</h3>
           <div className="flex flex-wrap gap-4 text-sm text-gray-600">

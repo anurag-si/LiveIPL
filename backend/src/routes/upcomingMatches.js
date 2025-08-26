@@ -6,7 +6,7 @@ const {
   getUpcomingMatchesByVenue 
 } = require('../data/upcomingMatchData');
 
-// GET /api/upcoming-matches - Get all upcoming matches
+// Get all upcoming matches
 router.get('/', (req, res) => {
   try {
     const upcomingMatches = getUpcomingMatches();
@@ -24,12 +24,12 @@ router.get('/', (req, res) => {
     res.status(500).json({
       success: false,
       error: 'Failed to retrieve upcoming matches',
-      message: error.message
+      message: error.message  
     });
   }
 });
 
-// GET /api/upcoming-matches/team/:teamCode - Get upcoming matches for a specific team
+// Get upcoming matches for a specific team
 router.get('/team/:teamCode', (req, res) => {
   try {
     const { teamCode } = req.params;
@@ -63,7 +63,7 @@ router.get('/team/:teamCode', (req, res) => {
   }
 });
 
-// GET /api/upcoming-matches/venue/:venue - Get upcoming matches at a specific venue
+// Get upcoming matches at a specific venue
 router.get('/venue/:venue', (req, res) => {
   try {
     const { venue } = req.params;
@@ -96,7 +96,7 @@ router.get('/venue/:venue', (req, res) => {
   }
 });
 
-// GET /api/upcoming-matches/next/:count - Get next N upcoming matches
+// Get next N upcoming matches
 router.get('/next/:count', (req, res) => {
   try {
     const { count } = req.params;
@@ -131,13 +131,11 @@ router.get('/next/:count', (req, res) => {
   }
 });
 
-// GET /api/upcoming-matches/search - Search upcoming matches with query parameters
 router.get('/search', (req, res) => {
   try {
     const { team, venue, date } = req.query;
     let matches = getUpcomingMatches();
     
-    // Filter by team if specified
     if (team) {
       const validTeamCodes = ['MI', 'CSK', 'RCB', 'KKR', 'SRH', 'DC', 'RR', 'PBKS', 'GT', 'LSG'];
       if (validTeamCodes.includes(team.toUpperCase())) {
@@ -148,7 +146,6 @@ router.get('/search', (req, res) => {
       }
     }
     
-    // Filter by venue if specified
     if (venue) {
       matches = matches.filter(match => 
         match.venue.stadium.toLowerCase().includes(venue.toLowerCase()) ||
@@ -156,7 +153,6 @@ router.get('/search', (req, res) => {
       );
     }
     
-    // Filter by date if specified (basic date filtering)
     if (date) {
       const searchDate = new Date(date);
       if (!isNaN(searchDate.getTime())) {

@@ -66,10 +66,10 @@ app.use('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 IPL Backend API server running on port ${PORT}`);
-  console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
-  console.log(`🏏 Points Table: http://localhost:${PORT}/api/points-table`);
-  console.log(`📅 Match Schedule: http://localhost:${PORT}/api/match-schedule`);
-  console.log(`⏰ Upcoming Matches: http://localhost:${PORT}/api/upcoming-matches`);
-  console.log(`🔥 Live Match: http://localhost:${PORT}/api/live-match`);
+  console.log(`server running on port ${PORT}`);
+  console.log(`Health check: http://localhost:${PORT}/api/health`);
+  console.log(`Points Table: http://localhost:${PORT}/api/points-table`);
+  console.log(`Match Schedule: http://localhost:${PORT}/api/match-schedule`);
+  console.log(`Upcoming Matches: http://localhost:${PORT}/api/upcoming-matches`);
+  console.log(`Live Match: http://localhost:${PORT}/api/live-match`);
 });

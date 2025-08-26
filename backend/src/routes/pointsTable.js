@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const { getPointsTableData, availableSeasons } = require('../data/pointsTableData');
 
-// GET /api/points-table - Get points table for a specific season
+// Get points table for a specific season
 router.get('/', (req, res) => {
   try {
     const { season = '2025' } = req.query;
     const pointsTable = getPointsTableData(season);
-    
+
     res.json({
       success: true,
       data: {
@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
   }
 });
 
-// GET /api/points-table/seasons - Get available seasons
+// Get available seasons
 router.get('/seasons', (req, res) => {
   try {
     res.json({
@@ -43,7 +43,7 @@ router.get('/seasons', (req, res) => {
   }
 });
 
-// GET /api/points-table/:season - Get points table for a specific season
+    // Get points table for a specific season
 router.get('/:season', (req, res) => {
   try {
     const { season } = req.params;

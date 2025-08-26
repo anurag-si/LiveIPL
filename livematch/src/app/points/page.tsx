@@ -1,5 +1,5 @@
-import PointsTable from "@/components/pointsTable";
 import Header from "@/components/Header";
+import PointsTable from "@/components/PointsTable";
 
 interface PointsPageProps {
   searchParams: { season?: string }

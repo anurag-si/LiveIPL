@@ -9,10 +9,8 @@ export default async function HomePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header - Always Visible */}
       <Header title="IPL 2025" currentPage="home" />
       
-      {/* Hero Section - Mobile Optimized */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-12 sm:py-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
@@ -39,12 +37,10 @@ export default async function HomePage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        {/* Live Match Hero - Always Visible */}
         <div className="mb-8 sm:mb-12">
           <LiveMatchHero />
         </div>
 
-        {/* Quick Stats - Mobile Optimized Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
           <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 text-center hover:shadow-lg transition-shadow">
             <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">10</div>
@@ -64,7 +60,6 @@ export default async function HomePage() {
           </div>
         </div>
 
-        {/* Upcoming Matches - Mobile Optimized */}
         <div className="mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6 text-center sm:text-left">Upcoming Matches</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -82,7 +77,6 @@ export default async function HomePage() {
                   </div>
                 </div>
                 
-                {/* Teams Section */}
                 <div className="p-3 sm:p-4 lg:p-5">
                   <div className="flex items-center justify-between mb-3 sm:mb-4">
                     {/* Home Team */}
@@ -104,13 +98,11 @@ export default async function HomePage() {
                       </div>
                     </div>
                     
-                    {/* VS Section */}
                     <div className="mx-2 sm:mx-3 lg:mx-4 text-center flex-shrink-0">
                       <div className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-300 mb-1">VS</div>
                       <div className="text-xs text-gray-400 font-medium">Match</div>
                     </div>
                     
-                    {/* Away Team */}
                     <div className="text-center flex-1 min-w-0">
                       <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto mb-2 sm:mb-3 bg-gray-50 rounded-full p-1 sm:p-2 border-2 border-gray-200">
                         <img
@@ -130,7 +122,6 @@ export default async function HomePage() {
                     </div>
                   </div>
                   
-                  {/* Match Info */}
                   <div className="bg-gray-50 rounded-lg p-2 sm:p-3 space-y-2">
                     <div className="flex items-center justify-center">
                       <div className="text-sm font-semibold text-gray-700">
@@ -156,7 +147,6 @@ export default async function HomePage() {
           </div>
         </div>
 
-        {/* Top Performers - Mobile Optimized */}
         <div className="mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6 text-center sm:text-left">Top Performers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -186,7 +176,6 @@ export default async function HomePage() {
           </div>
         </div>
 
-        {/* Quick Actions - Mobile Optimized */}
         <div className="mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6 text-center sm:text-left">Quick Actions</h2>
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
@@ -213,7 +202,6 @@ export default async function HomePage() {
         </div>
       </div>
 
-      {/* Footer - Mobile Optimized */}
       <footer className="bg-gray-800 text-white py-8 sm:py-12 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex justify-center mb-4 sm:mb-6">

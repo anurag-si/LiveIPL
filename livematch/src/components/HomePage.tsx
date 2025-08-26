@@ -2,6 +2,7 @@ import React from 'react';
 import { getUpcomingMatches } from '@/lib/api';
 import LiveMatchHero from './LiveMatchHero';
 import Header from './Header';
+import Link from 'next/link';
 
 export default async function HomePage() {
   const upcomingMatches = await getUpcomingMatches();
@@ -21,12 +22,18 @@ export default async function HomePage() {
             Experience the thrill of cricket&apos;s biggest festival
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-white text-blue-700 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg">
+            <Link 
+              href="/matches" 
+              className="px-8 py-4 bg-white text-blue-700 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg inline-block text-center"
+            >
               View Matches
-            </button>
-            <button className="px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-700 transition-colors font-semibold text-lg">
+            </Link>
+            <Link 
+              href="/points" 
+              className="px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-700 transition-colors font-semibold text-lg inline-block text-center"
+            >
               Points Table
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -139,25 +146,25 @@ export default async function HomePage() {
         <div className="mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-6">Quick Actions</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <a href="/matches" className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+            <Link href="/matches" className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
               <div className="text-4xl mb-4">📅</div>
               <div className="text-lg font-semibold text-gray-800">Match Schedule</div>
-            </a>
+            </Link>
             
-            <a href="/points" className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+            <Link href="/points" className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
               <div className="text-4xl mb-4">📊</div>
               <div className="text-lg font-semibold text-gray-800">Points Table</div>
-            </a>
+            </Link>
             
-            <a href="/teams" className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+            <Link href="/teams" className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
               <div className="text-4xl mb-4">👥</div>
               <div className="text-lg font-semibold text-gray-800">Team Profiles</div>
-            </a>
+            </Link>
             
-            <a href="/stats" className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+            <Link href="/stats" className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
               <div className="text-4xl mb-4">📈</div>
               <div className="text-lg font-semibold text-gray-800">Statistics</div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

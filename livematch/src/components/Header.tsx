@@ -6,7 +6,7 @@ interface HeaderProps {
   currentPage?: string
 }
 
-export default function Header({ title, currentPage = "points" }: HeaderProps) {
+export default function Header({ title, currentPage = "home" }: HeaderProps) {
   const navItems = [
     { name: "Home", href: "/", id: "home" },
     { name: "Matches", href: "/matches", id: "matches" },

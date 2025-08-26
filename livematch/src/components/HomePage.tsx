@@ -1,12 +1,16 @@
 import React from 'react';
 import { getUpcomingMatches } from '@/lib/api';
 import LiveMatchHero from './LiveMatchHero';
+import Header from './Header';
 
 export default async function HomePage() {
   const upcomingMatches = await getUpcomingMatches();
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Header - Always Visible */}
+      <Header title="IPL 2025" currentPage="home" />
+      
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">

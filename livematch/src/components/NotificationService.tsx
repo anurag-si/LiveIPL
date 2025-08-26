@@ -19,8 +19,12 @@ export default function NotificationService({ matchId, matchTitle, isLive }: Not
   const [permission, setPermission] = useState<NotificationPermission>('default');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [notificationInterval, setNotificationInterval] = useState<NodeJS.Timeout | null>(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    // Mark as client-side
+    setIsClient(true);
+    
     // Check if browser supports notifications
     if (!('Notification' in window)) {
       console.log('This browser does not support notifications');
@@ -188,6 +192,12 @@ export default function NotificationService({ matchId, matchTitle, isLive }: Not
     );
   };
 
+  // Don't render anything on server-side
+  if (!isClient) {
+    return null;
+  }
+
+  // Check if browser supports notifications
   if (!('Notification' in window)) {
     return null;
   }

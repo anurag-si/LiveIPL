@@ -29,10 +29,10 @@ export default function Header({ title, currentPage = "home" }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6 flex items-center justify-between">
         <div className="flex items-center gap-3 sm:gap-4">
           <Link href="/" className="hover:opacity-80 transition-opacity">
-            <img src="/IPLLOGO.jpg" alt="IPL Logo" className="h-8 w-auto sm:h-10 object-contain cursor-pointer" />
+            <img src="/IPLLOGO.jpg" alt="IPL Logo" className="h-10 w-auto sm:h-12 object-contain cursor-pointer" />
           </Link>
           <h1 className="text-base sm:text-lg md:text-xl font-semibold tracking-wide text-gray-900 leading-tight">{title}</h1>
         </div>

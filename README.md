@@ -39,19 +39,7 @@ npm install
 npm start
 ```
 
-### Environment Variables
 
-#### Frontend (.env.local)
-```bash
-NEXT_PUBLIC_API_URL=https://your-backend-url.railway.app/api
-```
-
-#### Backend (.env)
-```bash
-PORT=5001
-NODE_ENV=production
-CORS_ORIGIN=https://your-frontend-url.vercel.app
-```
 
 ##  API Endpoints
 
